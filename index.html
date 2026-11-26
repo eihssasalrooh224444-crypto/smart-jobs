@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>منصة التوظيف الذكية</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@600;700&display=swap">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#FFF5F8;color:#2A1620;font-family:'IBM Plex Sans Arabic',system-ui,sans-serif;line-height:1.6}
+a{color:#C2185B}
+button,input,select{font-family:inherit}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #1D6FD6;outline-offset:2px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+h1,h2,h3{margin:0}
+h1,h2,h3,.brand,.step strong,.demo-head strong,.empty strong,footer strong{font-family:'Nassim','Noto Naskh Arabic','Amiri',serif;font-weight:700}
+/* header */
+header.top{background:#A8225F;color:#fff}
+header.top .wrap{padding-top:16px;padding-bottom:16px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:12px;color:#fff;text-decoration:none;font-size:20px;font-weight:700}
+.brand .logo{width:40px;height:40px;border-radius:12px;background:#E9B44C;display:flex;align-items:center;justify-content:center}
+nav{display:flex;flex-wrap:wrap;gap:8px 28px;font-size:15px}
+nav a{color:#fff;text-decoration:none;padding:10px 0}
+.hbtns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{min-height:44px;padding:0 20px;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;text-decoration:none}
+.btn-gold{background:#E9B44C;color:#2A1620;border:0}
+.btn-line{background:transparent;color:#fff;border:1px solid #E8A0C0;font-weight:500}
+.btn-green{background:#C2185B;color:#fff;border:0}
+/* hero */
+.hero{background:#A8225F;color:#fff;padding:48px 0 96px}
+.hero .wrap{display:flex;flex-wrap:wrap;gap:48px;align-items:center}
+.hero-text{flex:1 1 480px;min-width:0;display:flex;flex-direction:column;gap:20px}
+.pill{align-self:flex-start;background:#B8296B;border:1px solid #D45B93;border-radius:999px;padding:6px 16px;font-size:14px}
+.hero h1{font-size:44px;line-height:1.3;font-weight:700}
+.hero p{margin:0;font-size:18px;color:#FBE3EE;max-width:560px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+.hero-actions .btn{min-height:48px;padding:0 28px;font-size:16px;border-radius:12px}
+.demo-card{flex:0 1 420px;min-width:0;width:100%;background:#fff;color:#2A1620;border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:18px;box-shadow:0 24px 48px rgba(0,0,0,.25)}
+.demo-head{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.tag-note{font-size:13px;color:#5E4552;background:#F8E8EF;border-radius:999px;padding:4px 12px}
+.demo-row{display:flex;align-items:center;gap:20px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip-s{background:#FCE4EE;color:#A8225F;border-radius:8px;padding:4px 12px;font-size:14px}
+.tip{background:#FBF1DC;border-radius:12px;padding:12px 16px;font-size:14px;color:#5B4210}
+/* ring */
+.ring{border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none}
+.ring b{border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;direction:ltr}
+/* search */
+.search{margin-top:-52px;position:relative}
+.search form{background:#fff;border:1px solid #F0D5E0;border-radius:20px;padding:20px 24px;display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end;box-shadow:0 12px 32px rgba(168,34,95,.14)}
+label.f{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600;color:#5E4552}
+.f input,.f select{height:48px;border:1px solid #D9A9BE;border-radius:10px;padding:0 12px;font-size:16px;color:#2A1620;background:#fff}
+/* sections */
+section.sec{padding:56px 0}
+.sec h2{font-size:30px;font-weight:700}
+.sub{margin:4px 0 0;color:#5E4552;font-size:16px}
+.layout{display:flex;flex-wrap:wrap;gap:28px;align-items:flex-start}
+aside.filters{flex:0 1 300px;min-width:260px;width:100%;background:#fff;border:1px solid #F0D5E0;border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:20px}
+.filters .f input,.filters .f select{height:46px;font-size:15px}
+.link-btn{min-height:44px;padding:0 8px;border:0;background:transparent;color:#C2185B;font-size:14px;font-weight:600;cursor:pointer;text-decoration:underline}
+.skill-btn{min-height:44px;padding:0 14px;border-radius:999px;cursor:pointer;font-size:14px;font-weight:500;border:1px solid #D9A9BE;background:#fff;color:#2A1620}
+.skill-btn.on{background:#C2185B;color:#fff;border-color:#C2185B}
+.list{flex:1 1 560px;min-width:0;display:flex;flex-direction:column;gap:16px}
+.job{display:flex;flex-wrap:wrap;gap:20px;align-items:center;background:#fff;border:1px solid #F0D5E0;border-radius:16px;padding:20px 24px}
+.job-main{flex:1 1 320px;min-width:0;display:flex;flex-direction:column;gap:10px}
+.job-title{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline}
+.job-title h3{font-size:20px}
+.job-title span{font-size:15px;color:#5E4552}
+.meta{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:14px;color:#5E4552}
+.meta strong{color:#2A1620}
+.sk{border-radius:8px;padding:3px 12px;font-size:13px;background:#F6EAF0;color:#5E4552}
+.sk.has{background:#FCE4EE;color:#A8225F}
+.gap{margin:0;font-size:14px;color:#5B4210;background:#FBF1DC;border-radius:10px;padding:8px 12px}
+.job-side{flex:0 0 150px;display:flex;flex-direction:column;align-items:center;gap:8px}
+.job-side .lbl{font-size:13px;font-weight:600}
+.job-side .btn{width:100%;border-radius:10px}
+.btn-done{background:#FCE4EE;color:#A8225F;border:1px solid #C2185B}
+.empty{background:#fff;border:1px dashed #D9A9BE;border-radius:16px;padding:40px 24px;text-align:center;display:flex;flex-direction:column;gap:12px;align-items:center}
+/* how */
+.steps{display:flex;flex-wrap:wrap;gap:16px;margin-top:28px}
+.step{flex:1 1 200px;min-width:0;background:#fff;border:1px solid #F0D5E0;border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:10px}
+.num{width:36px;height:36px;border-radius:50%;background:#C2185B;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px}
+.step span.t{font-size:14px;color:#5E4552}
+/* paths */
+.paths{background:#fff;border-top:1px solid #F0D5E0;border-bottom:1px solid #F0D5E0}
+.tabs{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0}
+.tab{min-height:48px;padding:0 24px;border-radius:12px;cursor:pointer;font-size:16px;font-weight:700;background:#fff;color:#2A1620;border:1px solid #D9A9BE}
+.tab[aria-selected="true"]{background:#C2185B;color:#fff;border-color:#C2185B}
+.role-box{background:#FFF5F8;border:1px solid #F0D5E0;border-radius:20px;padding:28px;display:flex;flex-direction:column;gap:24px}
+.role-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px}
+.role-head h3{font-size:24px}
+.role-head p{margin:4px 0 0;color:#5E4552}
+.role-head .btn{min-height:48px;padding:0 28px;font-size:16px;border-radius:12px}
+ol.rsteps{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:14px}
+ol.rsteps li{flex:1 1 240px;min-width:0;background:#fff;border:1px solid #F0D5E0;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;font-size:15px;font-weight:500}
+ol.rsteps .n{flex:none;width:34px;height:34px;border-radius:50%;background:#FCE4EE;color:#A8225F;display:flex;align-items:center;justify-content:center;font-weight:700}
+footer{background:#A8225F;color:#FBE3EE;padding:40px 0;font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px}
+footer .col{flex:1 1 320px;display:flex;flex-direction:column;gap:8px}
+footer strong{color:#fff;font-size:17px}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a href="#top" class="brand">
+      <span class="logo">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2A1620" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"></rect><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"></path><path d="M8 14l3 3 5-6"></path></svg>
+      </span>
+      التوظيف الذكي
+    </a>
+    <nav aria-label="التنقل الرئيسي">
+      <a href="#jobs">الوظائف</a>
+      <a href="#how">كيف تعمل المطابقة</a>
+      <a href="#paths">المسارات</a>
+    </nav>
+    <div class="hbtns">
+      <button class="btn btn-line">تسجيل الدخول</button>
+      <button class="btn btn-gold">إنشاء حساب</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-text">
+      <span class="pill">وظائف داخل المملكة العربية السعودية</span>
+      <h1>وظيفتك المناسبة،<br>بمطابقة ذكية لمهاراتك</h1>
+      <p>ارفع سيرتك الذاتية، ودع المنصة تحلّلها وتستخرج مهاراتك وتقارنها بمتطلبات الوظائف، لتصلك أنسب الفرص بنسبة توافق واضحة.</p>
+      <div class="hero-actions">
+        <a href="#jobs" class="btn btn-gold">ابحث عن وظيفة</a>
+        <a href="#paths" class="btn btn-line">أنا صاحب عمل</a>
+      </div>
+    </div>
+    <div class="demo-card">
+      <div class="demo-head"><strong>تحليل السيرة الذاتية</strong><span class="tag-note">مثال توضيحي</span></div>
+      <div class="demo-row">
+        <div class="ring" style="width:96px;height:96px;background:conic-gradient(#C2185B 310deg,#F3DCE7 0)"><b style="width:74px;height:74px;font-size:24px;color:#C2185B">86%</b></div>
+        <div><strong>مطوّر واجهات React</strong><div style="font-size:14px;color:#5E4552">نسبة التوافق مع المهارات المطلوبة</div></div>
+      </div>
+      <div>
+        <div style="font-size:14px;font-weight:600;margin-bottom:8px">مهارات استُخرجت من السيرة</div>
+        <div class="chips"><span class="chip-s">JavaScript</span><span class="chip-s">React</span><span class="chip-s">CSS</span><span class="chip-s">Git</span></div>
+      </div>
+      <div class="tip">اقتراح لتطوير المهارات: تعلّم TypeScript لرفع التوافق مع وظائف أكثر.</div>
+    </div>
+  </div>
+</section>
+
+<section class="search">
+  <div class="wrap">
+    <form action="#jobs" onsubmit="event.preventDefault();location.hash='jobs'">
+      <label class="f" style="flex:2 1 260px">المسمى الوظيفي أو المهارة
+        <input id="q" type="text" placeholder="مثال: مطوّر، SQL، محاسب">
+      </label>
+      <label class="f" style="flex:1 1 200px">المدينة
+        <select id="city">
+          <option value="all">كل المدن</option>
+          <option>الرياض</option><option>جدة</option><option>الدمام</option><option>المدينة المنورة</option><option>أبها</option>
+        </select>
+      </label>
+      <button class="btn btn-green" style="min-height:48px;padding:0 36px;font-size:16px;border-radius:12px" type="submit">بحث</button>
+    </form>
+  </div>
+</section>
+
+<section class="sec" id="jobs">
+  <div class="wrap">
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:12px;margin-bottom:28px">
+      <div>
+        <h2>الوظائف المتاحة</h2>
+        <p class="sub">مرتبة بالأعلى توافقاً مع المهارات التي اخترتها. الوظائف أدناه بيانات تجريبية للعرض.</p>
+      </div>
+      <strong style="font-size:17px;color:#C2185B"><span id="count">0</span> وظيفة مطابقة</strong>
+    </div>
+    <div class="layout">
+      <aside class="filters" aria-label="تصفية الوظائف">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <strong style="font-size:17px">تصفية النتائج</strong>
+          <button class="link-btn" id="reset">إعادة ضبط</button>
+        </div>
+        <label class="f">المؤهل
+          <select id="qual"><option value="all">أي مؤهل</option><option>دبلوم</option><option>بكالوريوس</option><option>ماجستير</option></select>
+        </label>
+        <label class="f">الخبرة
+          <select id="exp"><option value="all">أي مستوى</option><option value="a">حتى سنتين</option><option value="b">من 3 إلى 5 سنوات</option><option value="c">6 سنوات فأكثر</option></select>
+        </label>
+        <label class="f">الحد الأدنى للراتب
+          <select id="salary"><option value="0">الكل</option><option value="8000">8,000 ر.س فأكثر</option><option value="12000">12,000 ر.س فأكثر</option><option value="18000">18,000 ر.س فأكثر</option></select>
+        </label>
+        <div>
+          <div style="font-size:14px;font-weight:600;color:#5E4552;margin-bottom:10px">مهاراتي (تُحسب منها نسبة التوافق)</div>
+          <div class="chips" id="skills"></div>
+        </div>
+      </aside>
+      <div class="list" id="list"></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="how" style="padding-top:0">
+  <div class="wrap">
+    <h2>كيف تعمل المطابقة الذكية</h2>
+    <p class="sub">من رفع السيرة حتى عرض الوظائف المناسبة، في خطوات واضحة.</p>
+    <div class="steps" id="matchSteps"></div>
+  </div>
+</section>
+
+<section class="sec paths" id="paths">
+  <div class="wrap">
+    <h2>رحلتك على المنصة</h2>
+    <p class="sub">اختر نوع حسابك لترى مسارك من البداية إلى النهاية.</p>
+    <div class="tabs" role="tablist" aria-label="نوع المستخدم" id="tabs"></div>
+    <div class="role-box">
+      <div class="role-head">
+        <div><h3 id="rTitle"></h3><p id="rDesc"></p></div>
+        <button class="btn btn-green" id="rCta"></button>
+      </div>
+      <ol class="rsteps" id="rSteps"></ol>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="col"><strong>التوظيف الذكي</strong><span>منصة توظيف تطابق بين المهارات والوظائف داخل المملكة العربية السعودية.</span></div>
+    <div class="col"><strong>الثقة والأمان</strong>
+      <span>التحقق من أن الوظائف داخل السعودية قبل النشر.</span>
+      <span>حماية البيانات الشخصية وتشفير الملفات المرفوعة.</span>
+      <span>الحقول الحساسة اختيارية ولا تدخل في ترتيب المرشحين.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ===== البيانات (تجريبية) ===== */
+var JOBS = [
+  { id: 1, title: 'مطوّر واجهات React', company: 'شركة سحابة التقنية', city: 'الرياض', exp: 'b', qual: 'بكالوريوس', salary: 14000, skills: ['JavaScript', 'React', 'CSS', 'Git'] },
+  { id: 2, title: 'مهندس بيانات', company: 'مركز الرؤية للتحليلات', city: 'الرياض', exp: 'b', qual: 'بكالوريوس', salary: 17000, skills: ['Python', 'SQL', 'PostgreSQL', 'Git'] },
+  { id: 3, title: 'مطوّر Node.js', company: 'نبراس للحلول', city: 'جدة', exp: 'a', qual: 'بكالوريوس', salary: 11000, skills: ['JavaScript', 'Node.js', 'SQL', 'Git'] },
+  { id: 4, title: 'محلل أعمال', company: 'مجموعة الأفق', city: 'الدمام', exp: 'b', qual: 'بكالوريوس', salary: 12000, skills: ['SQL', 'تحليل المتطلبات', 'Excel'] },
+  { id: 5, title: 'أخصائي تسويق رقمي', company: 'استوديو بوصلة', city: 'جدة', exp: 'a', qual: 'دبلوم', salary: 8000, skills: ['التسويق الرقمي', 'Excel'] },
+  { id: 6, title: 'مصمم واجهات وتجربة مستخدم', company: 'مؤسسة ألوان', city: 'المدينة المنورة', exp: 'a', qual: 'بكالوريوس', salary: 9500, skills: ['Figma', 'CSS', 'JavaScript'] },
+  { id: 7, title: 'مدير مشاريع تقنية', company: 'شركة ركائز', city: 'الرياض', exp: 'c', qual: 'ماجستير', salary: 26000, skills: ['إدارة المشاريع', 'تحليل المتطلبات', 'SQL'] },
+  { id: 8, title: 'مهندس DevOps', company: 'سحاب الخليج', city: 'الدمام', exp: 'c', qual: 'بكالوريوس', salary: 22000, skills: ['Docker', 'Git', 'PostgreSQL', 'Node.js'] },
+  { id: 9, title: 'محاسب', company: 'مجموعة المسار', city: 'أبها', exp: 'a', qual: 'دبلوم', salary: 6500, skills: ['Excel', 'المحاسبة'] },
+  { id: 10, title: 'مطوّر تطبيقات Python', company: 'شركة معرفة', city: 'جدة', exp: 'b', qual: 'بكالوريوس', salary: 15000, skills: ['Python', 'SQL', 'Git', 'PostgreSQL'] }
+];
+var ALL_SKILLS = ['JavaScript', 'React', 'Node.js', 'Python', 'SQL', 'PostgreSQL', 'Git', 'Docker', 'CSS', 'Figma', 'Excel', 'تحليل المتطلبات', 'التسويق الرقمي', 'المحاسبة', 'إدارة المشاريع'];
+var EXP_LABELS = { a: 'حتى سنتين خبرة', b: 'من 3 إلى 5 سنوات خبرة', c: '6 سنوات فأكثر' };
+var MATCH_STEPS = [
+  ['رفع السيرة', 'تُرفع السيرة الذاتية وتُحفظ بشكل آمن في ملفك المهني.'],
+  ['تحليل الملف', 'يحلّل الذكاء الاصطناعي الملف المهني ويقرأ الخبرات والمؤهلات.'],
+  ['استخراج المهارات', 'تُستخرج مهاراتك تلقائياً وتُضاف إلى ملفك.'],
+  ['مقارنة المتطلبات', 'تُقارن مهاراتك بمتطلبات الوظائف في قاعدة البيانات.'],
+  ['نسبة التوافق', 'تظهر لك نسبة توافق لكل وظيفة، مع اقتراح لتطوير ما ينقصك.']
+];
+var ROLES = {
+  seeker: { label: 'باحث عن عمل', title: 'مسار الباحث عن عمل', desc: 'ابنِ ملفك المهني مرة واحدة، ودع المنصة تقترح عليك الوظائف الأنسب.', cta: 'أنشئ ملفك المهني',
+    steps: ['إنشاء الملف المهني وإدخال المؤهلات والخبرات', 'إضافة المهارات والمدينة', 'رفع السيرة الذاتية', 'تحليل الملف المهني واستخراج مهاراتك', 'البحث في قاعدة الوظائف ومقارنة المتطلبات', 'حساب نسبة التوافق', 'عرض الوظائف المقترحة، أو اقتراح تطوير المهارات عند انخفاض التوافق', 'التقديم ومتابعة حالة الطلب'] },
+  employer: { label: 'صاحب عمل', title: 'مسار صاحب العمل', desc: 'انشر وظيفتك واستقبل مرشحين مرتبين بحسب توافقهم مع متطلباتك.', cta: 'سجّل منشأتك',
+    steps: ['تسجيل بيانات المنشأة', 'إنشاء إعلان وظيفي', 'تحديد المؤهلات المطلوبة', 'تحديد الخبرة والمهارات', 'نشر الوظيفة بعد التحقق من أنها داخل السعودية', 'استقبال طلبات المرشحين', 'مراجعة نتائج المطابقة واختيار المرشحين', 'إرسال دعوات المقابلات وتحديث حالة الطلب'] },
+  admin: { label: 'مدير النظام', title: 'مسار مدير النظام', desc: 'تحكّم كامل في المستخدمين والإعلانات والبلاغات والتقارير.', cta: 'الدخول إلى لوحة الإدارة',
+    steps: ['الدخول إلى لوحة الإدارة', 'إدارة حسابات المستخدمين وصلاحياتهم', 'مراجعة إعلانات الوظائف', 'متابعة طلبات التوظيف', 'مراجعة البلاغات', 'إعداد التقارير والإحصائيات'] }
+};
+
+/* ===== الحالة ===== */
+var state = {
+  skills: ['JavaScript', 'React', 'SQL', 'Git', 'CSS'],
+  applied: [],
+  role: 'seeker'
+};
+
+function $(id) { return document.getElementById(id); }
+
+/* ===== الوظائف ===== */
+function renderJobs() {
+  var q = $('q').value.trim().toLowerCase();
+  var city = $('city').value, qual = $('qual').value, exp = $('exp').value;
+  var minSalary = parseInt($('salary').value, 10) || 0;
+  var sel = state.skills;
+
+  var rows = JOBS.map(function (j) {
+    var have = j.skills.filter(function (k) { return sel.indexOf(k) >= 0; });
+    var miss = j.skills.filter(function (k) { return sel.indexOf(k) < 0; });
+    return { j: j, have: have, miss: miss, pct: Math.round(100 * have.length / j.skills.length) };
+  }).filter(function (r) {
+    var j = r.j;
+    if (city !== 'all' && j.city !== city) return false;
+    if (qual !== 'all' && j.qual !== qual) return false;
+    if (exp !== 'all' && j.exp !== exp) return false;
+    if (j.salary < minSalary) return false;
+    if (q && (j.title + ' ' + j.company + ' ' + j.skills.join(' ')).toLowerCase().indexOf(q) < 0) return false;
+    return true;
+  }).sort(function (a, b) { return b.pct - a.pct; });
+
+  $('count').textContent = rows.length;
+
+  if (!rows.length) {
+    $('list').innerHTML = '<div class="empty"><strong style="font-size:18px">لا توجد وظائف مطابقة لهذه التصفية</strong>' +
+      '<span style="color:#5E4552">جرّب تغيير المدينة أو المؤهل، أو أعد ضبط التصفية.</span>' +
+      '<button class="btn btn-green" data-act="reset">إعادة ضبط التصفية</button></div>';
+    return;
+  }
+
+  $('list').innerHTML = rows.map(function (r) {
+    var j = r.j, tone = '#A5532F', label = 'توافق منخفض';
+    if (r.pct >= 70) { tone = '#C2185B'; label = 'توافق عالٍ'; }
+    else if (r.pct >= 40) { tone = '#8A5A12'; label = 'توافق متوسط'; }
+    var applied = state.applied.indexOf(j.id) >= 0;
+    var tags = j.skills.map(function (k) {
+      return '<span class="sk' + (sel.indexOf(k) >= 0 ? ' has' : '') + '">' + k + '</span>';
+    }).join('');
+    var gap = r.miss.length ? '<p class="gap">لرفع توافقك: تعلّم ' + r.miss.join('، ') + '</p>' : '';
+    return '<article class="job">' +
+      '<div class="job-main">' +
+        '<div class="job-title"><h3>' + j.title + '</h3><span>' + j.company + '</span></div>' +
+        '<div class="meta"><span>' + j.city + '</span><span>' + j.qual + '</span><span>' + EXP_LABELS[j.exp] + '</span>' +
+        '<strong>' + j.salary.toLocaleString('en-US') + ' ر.س / شهرياً</strong></div>' +
+        '<div class="chips">' + tags + '</div>' + gap +
+      '</div>' +
+      '<div class="job-side">' +
+        '<div class="ring" style="width:80px;height:80px;background:conic-gradient(' + tone + ' ' + Math.round(r.pct * 3.6) + 'deg,#F3DCE7 0)">' +
+          '<b style="width:62px;height:62px;font-size:19px;color:' + tone + '">' + r.pct + '%</b></div>' +
+        '<span class="lbl" style="color:' + tone + '">' + label + '</span>' +
+        '<button class="btn ' + (applied ? 'btn-done' : 'btn-green') + '" data-act="apply" data-id="' + j.id + '">' +
+          (applied ? 'تم إرسال الطلب' : 'قدّم الآن') + '</button>' +
+      '</div>' +
+    '</article>';
+  }).join('');
+}
+
+function renderSkills() {
+  $('skills').innerHTML = ALL_SKILLS.map(function (k) {
+    var on = state.skills.indexOf(k) >= 0;
+    return '<button class="skill-btn' + (on ? ' on' : '') + '" aria-pressed="' + on + '" data-act="skill" data-k="' + k + '">' + k + '</button>';
+  }).join('');
+}
+
+function renderRoles() {
+  $('tabs').innerHTML = Object.keys(ROLES).map(function (key) {
+    return '<button class="tab" role="tab" aria-selected="' + (state.role === key) + '" data-act="role" data-k="' + key + '">' + ROLES[key].label + '</button>';
+  }).join('');
+  var r = ROLES[state.role];
+  $('rTitle').textContent = r.title;
+  $('rDesc').textContent = r.desc;
+  $('rCta').textContent = r.cta;
+  $('rSteps').innerHTML = r.steps.map(function (t, i) {
+    return '<li><span class="n">' + (i + 1) + '</span><span>' + t + '</span></li>';
+  }).join('');
+}
+
+function resetFilters() {
+  $('q').value = '';
+  $('city').value = 'all';
+  $('qual').value = 'all';
+  $('exp').value = 'all';
+  $('salary').value = '0';
+  renderJobs();
+}
+
+/* ===== الأحداث ===== */
+document.addEventListener('click', function (e) {
+  var el = e.target.closest('[data-act]');
+  if (!el) return;
+  var act = el.getAttribute('data-act');
+  if (act === 'skill') {
+    var k = el.getAttribute('data-k'), i = state.skills.indexOf(k);
+    if (i >= 0) state.skills.splice(i, 1); else state.skills.push(k);
+    renderSkills(); renderJobs();
+  } else if (act === 'apply') {
+    var id = parseInt(el.getAttribute('data-id'), 10), p = state.applied.indexOf(id);
+    if (p >= 0) state.applied.splice(p, 1); else state.applied.push(id);
+    renderJobs();
+  } else if (act === 'role') {
+    state.role = el.getAttribute('data-k');
+    renderRoles();
+  } else if (act === 'reset') {
+    resetFilters();
+  }
+});
+['q', 'city', 'qual', 'exp', 'salary'].forEach(function (id) {
+  $(id).addEventListener(id === 'q' ? 'input' : 'change', renderJobs);
+});
+$('reset').addEventListener('click', resetFilters);
+
+/* ===== البداية ===== */
+$('matchSteps').innerHTML = MATCH_STEPS.map(function (s, i) {
+  return '<div class="step"><span class="num">' + (i + 1) + '</span><strong style="font-size:17px">' + s[0] + '</strong><span class="t">' + s[1] + '</span></div>';
+}).join('');
+renderSkills();
+renderJobs();
+renderRoles();
+</script>
+</body>
+</html>
