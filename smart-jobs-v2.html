@@ -1,0 +1,683 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>منصة التوظيف الذكية</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@600;700&display=swap">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#FFF5F8;color:#2A1620;font-family:'IBM Plex Sans Arabic',system-ui,sans-serif;line-height:1.6}
+a{color:#C2185B}
+button,input,select{font-family:inherit}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #1D6FD6;outline-offset:2px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+h1,h2,h3{margin:0}
+h1,h2,h3,.brand,.step strong,.demo-head strong,.empty strong,footer strong{font-family:'Nassim','Noto Naskh Arabic','Amiri',serif;font-weight:700}
+/* header */
+header.top{background:#A8225F;color:#fff}
+header.top .wrap{padding-top:16px;padding-bottom:16px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:12px;color:#fff;text-decoration:none;font-size:20px;font-weight:700}
+.brand .logo{width:40px;height:40px;border-radius:12px;background:#E9B44C;display:flex;align-items:center;justify-content:center}
+nav{display:flex;flex-wrap:wrap;gap:8px 28px;font-size:15px}
+nav a{color:#fff;text-decoration:none;padding:10px 0}
+.hbtns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{min-height:44px;padding:0 20px;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;text-decoration:none}
+.btn-gold{background:#E9B44C;color:#2A1620;border:0}
+.btn-line{background:transparent;color:#fff;border:1px solid #E8A0C0;font-weight:500}
+.btn-green{background:#C2185B;color:#fff;border:0}
+/* hero */
+.hero{background:#A8225F;color:#fff;padding:48px 0 96px}
+.hero .wrap{display:flex;flex-wrap:wrap;gap:48px;align-items:center}
+.hero-text{flex:1 1 480px;min-width:0;display:flex;flex-direction:column;gap:20px}
+.pill{align-self:flex-start;background:#B8296B;border:1px solid #D45B93;border-radius:999px;padding:6px 16px;font-size:14px}
+.hero h1{font-size:44px;line-height:1.3;font-weight:700}
+.hero p{margin:0;font-size:18px;color:#FBE3EE;max-width:560px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+.hero-actions .btn{min-height:48px;padding:0 28px;font-size:16px;border-radius:12px}
+.demo-card{flex:0 1 420px;min-width:0;width:100%;background:#fff;color:#2A1620;border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:18px;box-shadow:0 24px 48px rgba(0,0,0,.25)}
+.demo-head{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.tag-note{font-size:13px;color:#5E4552;background:#F8E8EF;border-radius:999px;padding:4px 12px}
+.demo-row{display:flex;align-items:center;gap:20px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip-s{background:#FCE4EE;color:#A8225F;border-radius:8px;padding:4px 12px;font-size:14px}
+.tip{background:#FBF1DC;border-radius:12px;padding:12px 16px;font-size:14px;color:#5B4210}
+/* ring */
+.ring{border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none}
+.ring b{border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;direction:ltr}
+/* search */
+.search{margin-top:-52px;position:relative}
+.search form{background:#fff;border:1px solid #F0D5E0;border-radius:20px;padding:20px 24px;display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end;box-shadow:0 12px 32px rgba(168,34,95,.14)}
+label.f{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600;color:#5E4552}
+.f input,.f select{height:48px;border:1px solid #D9A9BE;border-radius:10px;padding:0 12px;font-size:16px;color:#2A1620;background:#fff}
+/* sections */
+section.sec{padding:56px 0}
+.sec h2{font-size:30px;font-weight:700}
+.sub{margin:4px 0 0;color:#5E4552;font-size:16px}
+.layout{display:flex;flex-wrap:wrap;gap:28px;align-items:flex-start}
+aside.filters{flex:0 1 300px;min-width:260px;width:100%;background:#fff;border:1px solid #F0D5E0;border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:20px}
+.filters .f input,.filters .f select{height:46px;font-size:15px}
+.link-btn{min-height:44px;padding:0 8px;border:0;background:transparent;color:#C2185B;font-size:14px;font-weight:600;cursor:pointer;text-decoration:underline}
+.skill-btn{min-height:44px;padding:0 14px;border-radius:999px;cursor:pointer;font-size:14px;font-weight:500;border:1px solid #D9A9BE;background:#fff;color:#2A1620}
+.skill-btn.on{background:#C2185B;color:#fff;border-color:#C2185B}
+.list{flex:1 1 560px;min-width:0;display:flex;flex-direction:column;gap:16px}
+.job{display:flex;flex-wrap:wrap;gap:20px;align-items:center;background:#fff;border:1px solid #F0D5E0;border-radius:16px;padding:20px 24px}
+.job-main{flex:1 1 320px;min-width:0;display:flex;flex-direction:column;gap:10px}
+.job-title{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline}
+.job-title h3{font-size:20px}
+.job-title span{font-size:15px;color:#5E4552}
+.meta{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:14px;color:#5E4552}
+.meta strong{color:#2A1620}
+.sk{border-radius:8px;padding:3px 12px;font-size:13px;background:#F6EAF0;color:#5E4552}
+.sk.has{background:#FCE4EE;color:#A8225F}
+.gap{margin:0;font-size:14px;color:#5B4210;background:#FBF1DC;border-radius:10px;padding:8px 12px}
+.job-side{flex:0 0 150px;display:flex;flex-direction:column;align-items:center;gap:8px}
+.job-side .lbl{font-size:13px;font-weight:600}
+.job-side .btn{width:100%;border-radius:10px}
+.btn-done{background:#FCE4EE;color:#A8225F;border:1px solid #C2185B}
+.empty{background:#fff;border:1px dashed #D9A9BE;border-radius:16px;padding:40px 24px;text-align:center;display:flex;flex-direction:column;gap:12px;align-items:center}
+/* how */
+.steps{display:flex;flex-wrap:wrap;gap:16px;margin-top:28px}
+.step{flex:1 1 200px;min-width:0;background:#fff;border:1px solid #F0D5E0;border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:10px}
+.num{width:36px;height:36px;border-radius:50%;background:#C2185B;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px}
+.step span.t{font-size:14px;color:#5E4552}
+/* paths */
+.paths{background:#fff;border-top:1px solid #F0D5E0;border-bottom:1px solid #F0D5E0}
+.tabs{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0}
+.tab{min-height:48px;padding:0 24px;border-radius:12px;cursor:pointer;font-size:16px;font-weight:700;background:#fff;color:#2A1620;border:1px solid #D9A9BE}
+.tab[aria-selected="true"]{background:#C2185B;color:#fff;border-color:#C2185B}
+.role-box{background:#FFF5F8;border:1px solid #F0D5E0;border-radius:20px;padding:28px;display:flex;flex-direction:column;gap:24px}
+.role-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px}
+.role-head h3{font-size:24px}
+.role-head p{margin:4px 0 0;color:#5E4552}
+.role-head .btn{min-height:48px;padding:0 28px;font-size:16px;border-radius:12px}
+ol.rsteps{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:14px}
+ol.rsteps li{flex:1 1 240px;min-width:0;background:#fff;border:1px solid #F0D5E0;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;font-size:15px;font-weight:500}
+ol.rsteps .n{flex:none;width:34px;height:34px;border-radius:50%;background:#FCE4EE;color:#A8225F;display:flex;align-items:center;justify-content:center;font-weight:700}
+footer{background:#A8225F;color:#FBE3EE;padding:40px 0;font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px}
+footer .col{flex:1 1 320px;display:flex;flex-direction:column;gap:8px}
+footer strong{color:#fff;font-size:17px}
+
+/* dialogs, auth */
+dialog{border:0;border-radius:20px;padding:0;width:min(520px,calc(100% - 32px));max-height:90vh;color:#2A1620;background:#fff;box-shadow:0 24px 64px rgba(0,0,0,.35)}
+dialog::backdrop{background:rgba(42,22,32,.55)}
+.dform{display:flex;flex-direction:column;gap:14px;padding:22px;max-height:90vh;overflow:auto}
+.dh{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.dh h3{font-size:22px}
+.x{min-width:44px;min-height:44px;border:0;background:#FCE4EE;color:#A8225F;border-radius:50%;font-size:24px;cursor:pointer;line-height:1}
+.f textarea{border:1px solid #D9A9BE;border-radius:10px;padding:10px 12px;font-size:16px;font-family:inherit;min-height:90px;color:#2A1620;background:#fff}
+.err{margin:0;color:#B3261E;font-size:14px}
+.note{margin:0;background:#FBF1DC;border-radius:10px;padding:10px 12px;font-size:14px;color:#5B4210}
+.hint{margin:0;font-size:13px;color:#5E4552}
+.toast{position:fixed;bottom:20px;left:16px;right:16px;margin:auto;max-width:420px;background:#2A1620;color:#fff;padding:12px 16px;border-radius:12px;z-index:100;text-align:center;opacity:0;pointer-events:none;transition:opacity .2s}
+.toast.show{opacity:1}
+.who{align-self:center;color:#fff;font-weight:600;font-size:15px;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.acard{border:1px solid #F0D5E0;border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:8px}
+.acard h4{margin:0;font-size:16px}
+.badge{align-self:flex-start;background:#FCE4EE;color:#A8225F;border-radius:999px;padding:2px 12px;font-size:13px;font-weight:600}
+button[disabled]{opacity:.6;cursor:wait}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a href="#top" class="brand">
+      <span class="logo">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2A1620" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"></rect><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"></path><path d="M8 14l3 3 5-6"></path></svg>
+      </span>
+      التوظيف الذكي
+    </a>
+    <nav aria-label="التنقل الرئيسي">
+      <a href="#jobs">الوظائف</a>
+      <a href="#how">كيف تعمل المطابقة</a>
+      <a href="#paths">المسارات</a>
+    </nav>
+    <div class="hbtns" id="authBar"></div>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-text">
+      <span class="pill">وظائف داخل المملكة العربية السعودية</span>
+      <h1>وظيفتك المناسبة،<br>بمطابقة ذكية لمهاراتك</h1>
+      <p>ارفع سيرتك الذاتية، ودع المنصة تحلّلها وتستخرج مهاراتك وتقارنها بمتطلبات الوظائف، لتصلك أنسب الفرص بنسبة توافق واضحة.</p>
+      <div class="hero-actions">
+        <a href="#jobs" class="btn btn-gold">ابحث عن وظيفة</a>
+        <a href="#paths" class="btn btn-line">أنا صاحب عمل</a>
+      </div>
+    </div>
+    <div class="demo-card">
+      <div class="demo-head"><strong>تحليل السيرة الذاتية</strong><span class="tag-note">مثال توضيحي</span></div>
+      <div class="demo-row">
+        <div class="ring" style="width:96px;height:96px;background:conic-gradient(#C2185B 310deg,#F3DCE7 0)"><b style="width:74px;height:74px;font-size:24px;color:#C2185B">86%</b></div>
+        <div><strong>مطوّر واجهات React</strong><div style="font-size:14px;color:#5E4552">نسبة التوافق مع المهارات المطلوبة</div></div>
+      </div>
+      <div>
+        <div style="font-size:14px;font-weight:600;margin-bottom:8px">مهارات استُخرجت من السيرة</div>
+        <div class="chips"><span class="chip-s">JavaScript</span><span class="chip-s">React</span><span class="chip-s">CSS</span><span class="chip-s">Git</span></div>
+      </div>
+      <div class="tip">اقتراح لتطوير المهارات: تعلّم TypeScript لرفع التوافق مع وظائف أكثر.</div>
+    </div>
+  </div>
+</section>
+
+<section class="search">
+  <div class="wrap">
+    <form action="#jobs" onsubmit="event.preventDefault();location.hash='jobs'">
+      <label class="f" style="flex:2 1 260px">المسمى الوظيفي أو المهارة
+        <input id="q" type="text" placeholder="مثال: مطوّر، SQL، محاسب">
+      </label>
+      <label class="f" style="flex:1 1 200px">المدينة
+        <select id="city">
+          <option value="all">كل المدن</option>
+          <option>الرياض</option><option>جدة</option><option>الدمام</option><option>المدينة المنورة</option><option>أبها</option>
+        </select>
+      </label>
+      <button class="btn btn-green" style="min-height:48px;padding:0 36px;font-size:16px;border-radius:12px" type="submit">بحث</button>
+    </form>
+  </div>
+</section>
+
+<section class="sec" id="jobs">
+  <div class="wrap">
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:12px;margin-bottom:28px">
+      <div>
+        <h2>الوظائف المتاحة</h2>
+        <p class="sub" id="jobsNote">مرتبة بالأعلى توافقاً مع المهارات التي اخترتها.</p>
+      </div>
+      <strong style="font-size:17px;color:#C2185B"><span id="count">0</span> وظيفة مطابقة</strong>
+    </div>
+    <div class="layout">
+      <aside class="filters" aria-label="تصفية الوظائف">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <strong style="font-size:17px">تصفية النتائج</strong>
+          <button class="link-btn" id="reset">إعادة ضبط</button>
+        </div>
+        <label class="f">المؤهل
+          <select id="qual"><option value="all">أي مؤهل</option><option>دبلوم</option><option>بكالوريوس</option><option>ماجستير</option></select>
+        </label>
+        <label class="f">الخبرة
+          <select id="exp"><option value="all">أي مستوى</option><option value="a">حتى سنتين</option><option value="b">من 3 إلى 5 سنوات</option><option value="c">6 سنوات فأكثر</option></select>
+        </label>
+        <label class="f">الحد الأدنى للراتب
+          <select id="salary"><option value="0">الكل</option><option value="8000">8,000 ر.س فأكثر</option><option value="12000">12,000 ر.س فأكثر</option><option value="18000">18,000 ر.س فأكثر</option></select>
+        </label>
+        <div>
+          <div style="font-size:14px;font-weight:600;color:#5E4552;margin-bottom:10px">مهاراتي (تُحسب منها نسبة التوافق)</div>
+          <div class="chips" id="skills"></div>
+        </div>
+      </aside>
+      <div class="list" id="list"></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="how" style="padding-top:0">
+  <div class="wrap">
+    <h2>كيف تعمل المطابقة الذكية</h2>
+    <p class="sub">من رفع السيرة حتى عرض الوظائف المناسبة، في خطوات واضحة.</p>
+    <div class="steps" id="matchSteps"></div>
+  </div>
+</section>
+
+<section class="sec paths" id="paths">
+  <div class="wrap">
+    <h2>رحلتك على المنصة</h2>
+    <p class="sub">اختر نوع حسابك لترى مسارك من البداية إلى النهاية.</p>
+    <div class="tabs" role="tablist" aria-label="نوع المستخدم" id="tabs"></div>
+    <div class="role-box">
+      <div class="role-head">
+        <div><h3 id="rTitle"></h3><p id="rDesc"></p></div>
+        <button class="btn btn-green" id="rCta"></button>
+      </div>
+      <ol class="rsteps" id="rSteps"></ol>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="col"><strong>التوظيف الذكي</strong><span>منصة توظيف تطابق بين المهارات والوظائف داخل المملكة العربية السعودية.</span></div>
+    <div class="col"><strong>الثقة والأمان</strong>
+      <span>التحقق من أن الوظائف داخل السعودية قبل النشر.</span>
+      <span>حماية البيانات الشخصية وتشفير الملفات المرفوعة.</span>
+      <span>الحقول الحساسة اختيارية ولا تدخل في ترتيب المرشحين.</span>
+    </div>
+  </div>
+</footer>
+
+<dialog id="dlg" aria-label="نافذة"></dialog>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+/* ===== البيانات (تجريبية) ===== */
+var DEMO_JOBS = [
+  { id: 1, title: 'مطوّر واجهات React', company: 'شركة سحابة التقنية', city: 'الرياض', exp: 'b', qual: 'بكالوريوس', salary: 14000, skills: ['JavaScript', 'React', 'CSS', 'Git'] },
+  { id: 2, title: 'مهندس بيانات', company: 'مركز الرؤية للتحليلات', city: 'الرياض', exp: 'b', qual: 'بكالوريوس', salary: 17000, skills: ['Python', 'SQL', 'PostgreSQL', 'Git'] },
+  { id: 3, title: 'مطوّر Node.js', company: 'نبراس للحلول', city: 'جدة', exp: 'a', qual: 'بكالوريوس', salary: 11000, skills: ['JavaScript', 'Node.js', 'SQL', 'Git'] },
+  { id: 4, title: 'محلل أعمال', company: 'مجموعة الأفق', city: 'الدمام', exp: 'b', qual: 'بكالوريوس', salary: 12000, skills: ['SQL', 'تحليل المتطلبات', 'Excel'] },
+  { id: 5, title: 'أخصائي تسويق رقمي', company: 'استوديو بوصلة', city: 'جدة', exp: 'a', qual: 'دبلوم', salary: 8000, skills: ['التسويق الرقمي', 'Excel'] },
+  { id: 6, title: 'مصمم واجهات وتجربة مستخدم', company: 'مؤسسة ألوان', city: 'المدينة المنورة', exp: 'a', qual: 'بكالوريوس', salary: 9500, skills: ['Figma', 'CSS', 'JavaScript'] },
+  { id: 7, title: 'مدير مشاريع تقنية', company: 'شركة ركائز', city: 'الرياض', exp: 'c', qual: 'ماجستير', salary: 26000, skills: ['إدارة المشاريع', 'تحليل المتطلبات', 'SQL'] },
+  { id: 8, title: 'مهندس DevOps', company: 'سحاب الخليج', city: 'الدمام', exp: 'c', qual: 'بكالوريوس', salary: 22000, skills: ['Docker', 'Git', 'PostgreSQL', 'Node.js'] },
+  { id: 9, title: 'محاسب', company: 'مجموعة المسار', city: 'أبها', exp: 'a', qual: 'دبلوم', salary: 6500, skills: ['Excel', 'المحاسبة'] },
+  { id: 10, title: 'مطوّر تطبيقات Python', company: 'شركة معرفة', city: 'جدة', exp: 'b', qual: 'بكالوريوس', salary: 15000, skills: ['Python', 'SQL', 'Git', 'PostgreSQL'] }
+];
+var ALL_SKILLS = ['JavaScript', 'React', 'Node.js', 'Python', 'SQL', 'PostgreSQL', 'Git', 'Docker', 'CSS', 'Figma', 'Excel', 'تحليل المتطلبات', 'التسويق الرقمي', 'المحاسبة', 'إدارة المشاريع'];
+var EXP_LABELS = { a: 'حتى سنتين خبرة', b: 'من 3 إلى 5 سنوات خبرة', c: '6 سنوات فأكثر' };
+var MATCH_STEPS = [
+  ['رفع السيرة', 'تُرفع السيرة الذاتية وتُحفظ بشكل آمن في ملفك المهني.'],
+  ['تحليل الملف', 'يحلّل الذكاء الاصطناعي الملف المهني ويقرأ الخبرات والمؤهلات.'],
+  ['استخراج المهارات', 'تُستخرج مهاراتك تلقائياً وتُضاف إلى ملفك.'],
+  ['مقارنة المتطلبات', 'تُقارن مهاراتك بمتطلبات الوظائف في قاعدة البيانات.'],
+  ['نسبة التوافق', 'تظهر لك نسبة توافق لكل وظيفة، مع اقتراح لتطوير ما ينقصك.']
+];
+var ROLES = {
+  seeker: { label: 'باحث عن عمل', title: 'مسار الباحث عن عمل', desc: 'ابنِ ملفك المهني مرة واحدة، ودع المنصة تقترح عليك الوظائف الأنسب.', cta: 'أنشئ ملفك المهني',
+    steps: ['إنشاء الملف المهني وإدخال المؤهلات والخبرات', 'إضافة المهارات والمدينة', 'رفع السيرة الذاتية', 'تحليل الملف المهني واستخراج مهاراتك', 'البحث في قاعدة الوظائف ومقارنة المتطلبات', 'حساب نسبة التوافق', 'عرض الوظائف المقترحة، أو اقتراح تطوير المهارات عند انخفاض التوافق', 'التقديم ومتابعة حالة الطلب'] },
+  employer: { label: 'صاحب عمل', title: 'مسار صاحب العمل', desc: 'انشر وظيفتك واستقبل مرشحين مرتبين بحسب توافقهم مع متطلباتك.', cta: 'سجّل منشأتك',
+    steps: ['تسجيل بيانات المنشأة', 'إنشاء إعلان وظيفي', 'تحديد المؤهلات المطلوبة', 'تحديد الخبرة والمهارات', 'نشر الوظيفة بعد التحقق من أنها داخل السعودية', 'استقبال طلبات المرشحين', 'مراجعة نتائج المطابقة واختيار المرشحين', 'إرسال دعوات المقابلات وتحديث حالة الطلب'] },
+  admin: { label: 'مدير النظام', title: 'مسار مدير النظام', desc: 'تحكّم كامل في المستخدمين والإعلانات والبلاغات والتقارير.', cta: 'الدخول إلى لوحة الإدارة',
+    steps: ['الدخول إلى لوحة الإدارة', 'إدارة حسابات المستخدمين وصلاحياتهم', 'مراجعة إعلانات الوظائف', 'متابعة طلبات التوظيف', 'مراجعة البلاغات', 'إعداد التقارير والإحصائيات'] }
+};
+
+/* ===== الإعدادات ===== */
+var SUPABASE_URL = 'https://rzlmttsluzezxovdlteb.supabase.co';
+var SUPABASE_KEY = 'sb_publishable_hET6LQRceD-BiMxYkWBiMA_iDQpgiuD';
+var CITIES = ['الرياض', 'جدة', 'مكة المكرمة', 'المدينة المنورة', 'الدمام', 'الخبر', 'الجبيل', 'أبها', 'تبوك', 'بريدة', 'حائل', 'جازان', 'نجران', 'الطائف', 'ينبع'];
+var QUALS = ['دبلوم', 'بكالوريوس', 'ماجستير', 'أخرى'];
+var STATUS = { pending: 'قيد المراجعة', interview: 'دعوة لمقابلة', accepted: 'مقبول', rejected: 'غير مقبول' };
+var DEFAULT_SKILLS = ['JavaScript', 'React', 'SQL', 'Git', 'CSS'];
+
+var sb = null;
+try { sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY); } catch (e) { console.error('supabase', e); }
+
+/* ===== الحالة ===== */
+var state = { skills: DEFAULT_SKILLS.slice(), role: 'seeker', user: null, profile: null, applied: [], jobs: [], demo: true };
+
+function $(id) { return document.getElementById(id); }
+function esc(s) {
+  return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+    return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+  });
+}
+var toastTimer;
+function toast(msg) {
+  var t = $('toast'); t.textContent = msg; t.classList.add('show');
+  clearTimeout(toastTimer); toastTimer = setTimeout(function () { t.classList.remove('show'); }, 3500);
+}
+function expKey(n) { n = n || 0; return n <= 2 ? 'a' : (n <= 5 ? 'b' : 'c'); }
+function cityOpts(sel) {
+  return '<option value="">اختر المدينة</option>' + CITIES.map(function (c) { return '<option' + (c === sel ? ' selected' : '') + '>' + c + '</option>'; }).join('');
+}
+function skillBtns(selected) {
+  return '<div class="chips">' + ALL_SKILLS.map(function (k) {
+    var on = selected.indexOf(k) >= 0;
+    return '<button type="button" class="skill-btn' + (on ? ' on' : '') + '" aria-pressed="' + on + '" data-act="dskill" data-k="' + esc(k) + '">' + esc(k) + '</button>';
+  }).join('') + '</div>';
+}
+function pickedSkills() {
+  return Array.prototype.map.call(document.querySelectorAll('#dlg .skill-btn.on'), function (b) { return b.getAttribute('data-k'); });
+}
+function authMsg(err) {
+  var m = (err && err.message) || '';
+  if (/invalid login/i.test(m)) return 'البريد الإلكتروني أو كلمة المرور غير صحيحة';
+  if (/not confirmed/i.test(m)) return 'لم يتم تأكيد البريد بعد. افتح رسالة التأكيد في بريدك';
+  if (/already registered|already been registered/i.test(m)) return 'هذا البريد مسجّل مسبقاً، سجّل الدخول بدلاً من ذلك';
+  if (/rate limit|too many/i.test(m)) return 'محاولات كثيرة، انتظر قليلاً ثم أعد المحاولة';
+  if (/password/i.test(m)) return 'كلمة المرور ضعيفة، استخدم 8 أحرف على الأقل';
+  if (/fetch|network/i.test(m)) return 'تعذّر الاتصال بالخادم، تحقق من الإنترنت';
+  return 'تعذّر تنفيذ الطلب: ' + m;
+}
+
+/* ===== النوافذ ===== */
+function openDlg(html) { var d = $('dlg'); d.innerHTML = html; if (!d.open) d.showModal(); }
+function closeDlg() { var d = $('dlg'); if (d.open) d.close(); }
+$('dlg').addEventListener('click', function (e) { if (e.target === this) closeDlg(); });
+function head(title) { return '<div class="dh"><h3>' + title + '</h3><button type="button" class="x" data-act="close" aria-label="إغلاق">×</button></div>'; }
+function setErr(msg) { var el = $('fmsg'); if (el) el.textContent = msg || ''; }
+function busy(on) { var b = $('fsubmit'); if (b) b.disabled = on; }
+
+function authHtml(mode, msg, role) {
+  var su = mode === 'signup';
+  return '<form class="dform" data-form="' + mode + '">' + head(su ? 'إنشاء حساب' : 'تسجيل الدخول') +
+    (msg ? '<p class="note">' + esc(msg) + '</p>' : '') +
+    (su ? '<label class="f">الاسم الكامل أو اسم المنشأة<input name="full_name" required maxlength="80"></label>' +
+      '<label class="f">نوع الحساب<select name="role"><option value="seeker"' + (role !== 'employer' ? ' selected' : '') + '>باحث عن عمل</option><option value="employer"' + (role === 'employer' ? ' selected' : '') + '>صاحب عمل</option></select></label>' +
+      '<label class="f">المدينة<select name="city">' + cityOpts('') + '</select></label>' : '') +
+    '<label class="f">البريد الإلكتروني<input name="email" type="email" required autocomplete="email" dir="ltr"></label>' +
+    '<label class="f">كلمة المرور<input name="password" type="password" required minlength="8" autocomplete="' + (su ? 'new-password' : 'current-password') + '" dir="ltr"></label>' +
+    '<p class="err" id="fmsg" role="alert"></p>' +
+    '<button class="btn btn-green" type="submit" id="fsubmit">' + (su ? 'إنشاء الحساب' : 'دخول') + '</button>' +
+    '<button type="button" class="link-btn" data-act="switch" data-k="' + (su ? 'login' : 'signup') + '">' + (su ? 'لديك حساب؟ سجّل الدخول' : 'ما عندك حساب؟ أنشئ حساباً') + '</button></form>';
+}
+
+/* ===== الجلسة والملف ===== */
+async function ensureProfile() {
+  var r = await sb.from('profiles').select('*').eq('id', state.user.id).maybeSingle();
+  if (r.data) { state.profile = r.data; return; }
+  var m = state.user.user_metadata || {};
+  var ins = await sb.from('profiles').insert({
+    id: state.user.id, role: m.role === 'employer' ? 'employer' : 'seeker', full_name: m.full_name || null, city: m.city || null
+  }).select().single();
+  if (ins.data) state.profile = ins.data;
+  else toast('تعذّر إنشاء ملفك: ' + (ins.error ? ins.error.message : ''));
+}
+async function loadApplied() {
+  var r = await sb.from('applications').select('job_id').eq('seeker_id', state.user.id);
+  state.applied = (r.data || []).map(function (x) { return x.job_id; });
+}
+async function handleSession(session) {
+  state.user = session ? session.user : null; state.profile = null; state.applied = [];
+  if (state.user) {
+    await ensureProfile();
+    if (state.profile && state.profile.role === 'seeker') {
+      await loadApplied();
+      if (state.profile.skills && state.profile.skills.length) state.skills = state.profile.skills.slice();
+    }
+  } else {
+    state.skills = DEFAULT_SKILLS.slice();
+  }
+  renderAuthBar(); renderSkills(); renderJobs();
+}
+function renderAuthBar() {
+  var el = $('authBar');
+  if (!state.user) {
+    el.innerHTML = '<button class="btn btn-line" data-act="login">تسجيل الدخول</button><button class="btn btn-gold" data-act="signup">إنشاء حساب</button>';
+    return;
+  }
+  var p = state.profile || {}, name = p.full_name || state.user.email;
+  var b = '<span class="who" title="' + esc(name) + '">' + esc(name) + '</span>';
+  if (p.role === 'employer') b += '<button class="btn btn-gold" data-act="newjob">انشر وظيفة</button><button class="btn btn-line" data-act="apps">الطلبات المستلمة</button>';
+  else b += '<button class="btn btn-gold" data-act="profile">ملفي</button><button class="btn btn-line" data-act="apps">طلباتي</button>';
+  if (p.role === 'employer') b += '<button class="btn btn-line" data-act="profile">ملفي</button>';
+  b += '<button class="btn btn-line" data-act="logout">خروج</button>';
+  el.innerHTML = b;
+}
+
+/* ===== معالجات النماذج ===== */
+var handlers = {
+  async signup(fd) {
+    if (!sb) return setErr('تعذّر الاتصال بقاعدة البيانات');
+    busy(true); setErr('');
+    var meta = { full_name: String(fd.get('full_name')).trim(), role: fd.get('role'), city: fd.get('city') };
+    var r = await sb.auth.signUp({ email: String(fd.get('email')).trim(), password: fd.get('password'), options: { data: meta, emailRedirectTo: location.origin + location.pathname } });
+    busy(false);
+    if (r.error) return setErr(authMsg(r.error));
+    if (r.data.user && r.data.user.identities && r.data.user.identities.length === 0) return setErr('هذا البريد مسجّل مسبقاً، سجّل الدخول بدلاً من ذلك');
+    if (r.data.session) { closeDlg(); toast('تم إنشاء حسابك، أهلاً بك'); }
+    else openDlg(authHtml('login', 'أرسلنا رابط تأكيد إلى بريدك. افتحه ثم سجّل الدخول هنا.'));
+  },
+  async login(fd) {
+    if (!sb) return setErr('تعذّر الاتصال بقاعدة البيانات');
+    busy(true); setErr('');
+    var r = await sb.auth.signInWithPassword({ email: String(fd.get('email')).trim(), password: fd.get('password') });
+    busy(false);
+    if (r.error) return setErr(authMsg(r.error));
+    closeDlg(); toast('تم تسجيل الدخول');
+  },
+  async profile(fd) {
+    busy(true); setErr('');
+    var upd = { full_name: String(fd.get('full_name')).trim() || null, city: fd.get('city') || null };
+    if (state.profile.role === 'seeker') {
+      upd.qualification = fd.get('qualification') || null;
+      upd.experience_years = parseInt(fd.get('experience_years'), 10) || 0;
+      upd.expected_salary = parseInt(fd.get('expected_salary'), 10) || null;
+      upd.gender = fd.get('gender') || null;
+      upd.skills = pickedSkills();
+    }
+    var r = await sb.from('profiles').update(upd).eq('id', state.user.id).select().single();
+    busy(false);
+    if (r.error) return setErr('تعذّر الحفظ: ' + r.error.message);
+    state.profile = r.data;
+    if (upd.skills) state.skills = upd.skills.slice();
+    closeDlg(); renderAuthBar(); renderSkills(); renderJobs(); toast('تم حفظ ملفك');
+  },
+  async job(fd) {
+    busy(true); setErr('');
+    var extra = String(fd.get('extra') || '').split(/[,،]/).map(function (s) { return s.trim(); }).filter(Boolean);
+    var skills = pickedSkills().concat(extra).filter(function (v, i, a) { return v.length <= 40 && a.indexOf(v) === i; }).slice(0, 15);
+    var row = {
+      employer_id: state.user.id, title: String(fd.get('title')).trim(), description: String(fd.get('description') || '').trim() || null,
+      city: fd.get('city'), min_salary: parseInt(fd.get('min_salary'), 10) || null, max_salary: parseInt(fd.get('max_salary'), 10) || null,
+      min_experience: parseInt(fd.get('min_experience'), 10) || 0, required_skills: skills, status: 'open',
+      company: String(fd.get('company')).trim(), qualification: fd.get('qualification') || null
+    };
+    var r = await sb.from('jobs').insert(row), note = '';
+    if (r.error && /column|schema cache/i.test(r.error.message)) {
+      delete row.company; delete row.qualification;
+      r = await sb.from('jobs').insert(row); note = ' (اسم المنشأة والمؤهل يحتاجان تحديثاً لقاعدة البيانات)';
+    }
+    busy(false);
+    if (r.error) return setErr('تعذّر النشر: ' + r.error.message);
+    closeDlg(); await loadJobs(); renderJobs(); toast('تم نشر الوظيفة' + note);
+  }
+};
+document.addEventListener('submit', function (e) {
+  var f = e.target.closest('form[data-form]'); if (!f) return;
+  e.preventDefault();
+  var h = handlers[f.getAttribute('data-form')];
+  if (h) h(new FormData(f)).catch(function (err) { busy(false); setErr(authMsg(err)); });
+});
+
+/* ===== نوافذ الملف والوظيفة والطلبات ===== */
+function openProfile() {
+  var p = state.profile; if (!p) return;
+  var seeker = p.role === 'seeker';
+  openDlg('<form class="dform" data-form="profile">' + head(seeker ? 'ملفي المهني' : 'بيانات المنشأة') +
+    '<label class="f">' + (seeker ? 'الاسم الكامل' : 'اسم المنشأة') + '<input name="full_name" required maxlength="80" value="' + esc(p.full_name) + '"></label>' +
+    '<label class="f">المدينة<select name="city">' + cityOpts(p.city) + '</select></label>' +
+    (seeker ? '<label class="f">المؤهل<select name="qualification"><option value="">اختر المؤهل</option>' + QUALS.map(function (q) { return '<option' + (q === p.qualification ? ' selected' : '') + '>' + q + '</option>'; }).join('') + '</select></label>' +
+      '<label class="f">سنوات الخبرة<input name="experience_years" type="number" min="0" max="50" value="' + esc(p.experience_years || 0) + '"></label>' +
+      '<label class="f">الراتب المتوقع (ر.س شهرياً)<input name="expected_salary" type="number" min="0" step="500" value="' + esc(p.expected_salary || '') + '"></label>' +
+      '<div><div style="font-size:14px;font-weight:600;color:#5E4552;margin-bottom:10px">مهاراتي</div>' + skillBtns(p.skills || []) + '</div>' +
+      '<label class="f">الجنس (اختياري)<select name="gender"><option value="">أفضّل عدم الإفصاح</option><option' + (p.gender === 'ذكر' ? ' selected' : '') + '>ذكر</option><option' + (p.gender === 'أنثى' ? ' selected' : '') + '>أنثى</option></select></label>' +
+      '<p class="hint">حقل الجنس اختياري ولا يدخل في نسبة التوافق.</p>' : '') +
+    '<p class="err" id="fmsg" role="alert"></p><button class="btn btn-green" type="submit" id="fsubmit">حفظ</button></form>');
+}
+function openNewJob() {
+  var p = state.profile || {};
+  openDlg('<form class="dform" data-form="job">' + head('نشر وظيفة جديدة') +
+    '<label class="f">المسمى الوظيفي<input name="title" required maxlength="100"></label>' +
+    '<label class="f">اسم المنشأة<input name="company" required maxlength="80" value="' + esc(p.full_name) + '"></label>' +
+    '<label class="f">المدينة (داخل السعودية)<select name="city" required>' + cityOpts(p.city) + '</select></label>' +
+    '<label class="f">المؤهل المطلوب<select name="qualification"><option value="">أي مؤهل</option>' + QUALS.map(function (q) { return '<option>' + q + '</option>'; }).join('') + '</select></label>' +
+    '<label class="f">الحد الأدنى للخبرة (سنوات)<input name="min_experience" type="number" min="0" max="40" value="0"></label>' +
+    '<label class="f">الراتب من (ر.س)<input name="min_salary" type="number" min="0" step="500"></label>' +
+    '<label class="f">الراتب إلى (ر.س)<input name="max_salary" type="number" min="0" step="500"></label>' +
+    '<div><div style="font-size:14px;font-weight:600;color:#5E4552;margin-bottom:10px">المهارات المطلوبة</div>' + skillBtns([]) + '</div>' +
+    '<label class="f">مهارات أخرى (افصل بينها بفاصلة)<input name="extra" maxlength="200"></label>' +
+    '<label class="f">وصف الوظيفة<textarea name="description" maxlength="2000"></textarea></label>' +
+    '<p class="err" id="fmsg" role="alert"></p><button class="btn btn-green" type="submit" id="fsubmit">نشر الوظيفة</button></form>');
+}
+function fmtDate(s) { try { return new Date(s).toLocaleDateString('ar-SA'); } catch (e) { return ''; } }
+function matchPct(have, need) {
+  need = need || []; have = have || [];
+  if (!need.length) return 0;
+  return Math.round(100 * need.filter(function (k) { return have.indexOf(k) >= 0; }).length / need.length);
+}
+async function openApps() {
+  var employer = state.profile && state.profile.role === 'employer';
+  openDlg('<div class="dform">' + head(employer ? 'الطلبات المستلمة' : 'طلباتي') + '<p class="hint">جارٍ التحميل…</p></div>');
+  var q = employer
+    ? sb.from('applications').select('id,status,created_at,jobs(*),seeker:profiles!seeker_id(*)').order('created_at', { ascending: false })
+    : sb.from('applications').select('id,status,created_at,jobs(*)').eq('seeker_id', state.user.id).order('created_at', { ascending: false });
+  var r = await q, rows = r.data || [], html;
+  if (r.error) html = '<p class="err">تعذّر التحميل: ' + esc(r.error.message) + '</p>';
+  else if (!rows.length) html = '<p class="hint">' + (employer ? 'لا توجد طلبات على وظائفك بعد.' : 'لم تقدّم على أي وظيفة بعد.') + '</p>';
+  else html = rows.map(function (a) {
+    var j = a.jobs || {}, s = a.seeker || {};
+    if (employer) {
+      var pct = matchPct(s.skills, j.required_skills);
+      return '<div class="acard"><h4>' + esc(s.full_name || 'مرشح') + '</h4><span class="hint">للوظيفة: ' + esc(j.title) + ' · ' + fmtDate(a.created_at) + '</span>' +
+        '<div class="meta"><span>' + esc(s.city || '—') + '</span><span>' + esc(s.qualification || '—') + '</span><span>' + esc(s.experience_years || 0) + ' سنوات خبرة</span><strong>توافق ' + pct + '%</strong></div>' +
+        '<div class="chips">' + (s.skills || []).map(function (k) { return '<span class="sk' + ((j.required_skills || []).indexOf(k) >= 0 ? ' has' : '') + '">' + esc(k) + '</span>'; }).join('') + '</div>' +
+        '<span class="badge">' + esc(STATUS[a.status] || a.status) + '</span></div>';
+    }
+    return '<div class="acard"><h4>' + esc(j.title) + '</h4><span class="hint">' + esc(j.company || '') + ' · ' + esc(j.city || '') + ' · ' + fmtDate(a.created_at) + '</span><span class="badge">' + esc(STATUS[a.status] || a.status) + '</span></div>';
+  }).join('');
+  openDlg('<div class="dform">' + head(employer ? 'الطلبات المستلمة' : 'طلباتي') + html + '</div>');
+}
+
+/* ===== الوظائف ===== */
+function normalizeJob(r) {
+  return { id: r.id, title: r.title, company: r.company || 'منشأة', city: r.city || '—', exp: expKey(r.min_experience), qual: r.qualification || 'أي مؤهل',
+    salary: r.min_salary, skills: r.required_skills || [], real: true };
+}
+async function loadJobs() {
+  state.jobs = DEMO_JOBS; state.demo = true;
+  if (!sb) return;
+  try {
+    var r = await sb.from('jobs').select('*').eq('status', 'open').order('created_at', { ascending: false });
+    if (!r.error && r.data && r.data.length) { state.jobs = r.data.map(normalizeJob); state.demo = false; }
+  } catch (e) { console.error(e); }
+}
+function renderJobs() {
+  var q = $('q').value.trim().toLowerCase();
+  var city = $('city').value, qual = $('qual').value, exp = $('exp').value;
+  var minSalary = parseInt($('salary').value, 10) || 0;
+  var sel = state.skills;
+  $('jobsNote').textContent = state.demo
+    ? 'مرتبة بالأعلى توافقاً مع المهارات التي اخترتها. الوظائف أدناه بيانات تجريبية للعرض إلى أن ينشر أصحاب العمل وظائفهم.'
+    : 'مرتبة بالأعلى توافقاً مع مهاراتك. الوظائف منشورة من أصحاب العمل.';
+
+  var rows = state.jobs.map(function (j) {
+    var have = j.skills.filter(function (k) { return sel.indexOf(k) >= 0; });
+    var miss = j.skills.filter(function (k) { return sel.indexOf(k) < 0; });
+    return { j: j, have: have, miss: miss, pct: j.skills.length ? Math.round(100 * have.length / j.skills.length) : 0 };
+  }).filter(function (r) {
+    var j = r.j;
+    if (city !== 'all' && j.city !== city) return false;
+    if (qual !== 'all' && j.qual !== qual && j.qual !== 'أي مؤهل') return false;
+    if (exp !== 'all' && j.exp !== exp) return false;
+    if ((j.salary || 0) < minSalary) return false;
+    if (q && (j.title + ' ' + j.company + ' ' + j.skills.join(' ')).toLowerCase().indexOf(q) < 0) return false;
+    return true;
+  }).sort(function (a, b) { return b.pct - a.pct; });
+
+  $('count').textContent = rows.length;
+  if (!rows.length) {
+    $('list').innerHTML = '<div class="empty"><strong style="font-size:18px">لا توجد وظائف مطابقة لهذه التصفية</strong>' +
+      '<span style="color:#5E4552">جرّب تغيير المدينة أو المؤهل، أو أعد ضبط التصفية.</span>' +
+      '<button class="btn btn-green" data-act="reset">إعادة ضبط التصفية</button></div>';
+    return;
+  }
+  $('list').innerHTML = rows.map(function (r) {
+    var j = r.j, tone = '#A5532F', label = 'توافق منخفض';
+    if (r.pct >= 70) { tone = '#C2185B'; label = 'توافق عالٍ'; }
+    else if (r.pct >= 40) { tone = '#8A5A12'; label = 'توافق متوسط'; }
+    var applied = state.applied.indexOf(j.id) >= 0;
+    var tags = j.skills.map(function (k) { return '<span class="sk' + (sel.indexOf(k) >= 0 ? ' has' : '') + '">' + esc(k) + '</span>'; }).join('');
+    var gap = r.miss.length ? '<p class="gap">لرفع توافقك: تعلّم ' + r.miss.map(esc).join('، ') + '</p>' : '';
+    return '<article class="job">' +
+      '<div class="job-main">' +
+        '<div class="job-title"><h3>' + esc(j.title) + '</h3><span>' + esc(j.company) + '</span></div>' +
+        '<div class="meta"><span>' + esc(j.city) + '</span><span>' + esc(j.qual) + '</span><span>' + EXP_LABELS[j.exp] + '</span>' +
+        '<strong>' + (j.salary ? Number(j.salary).toLocaleString('en-US') + ' ر.س / شهرياً' : 'الراتب غير محدد') + '</strong></div>' +
+        '<div class="chips">' + tags + '</div>' + gap +
+      '</div>' +
+      '<div class="job-side">' +
+        '<div class="ring" style="width:80px;height:80px;background:conic-gradient(' + tone + ' ' + Math.round(r.pct * 3.6) + 'deg,#F3DCE7 0)">' +
+          '<b style="width:62px;height:62px;font-size:19px;color:' + tone + '">' + r.pct + '%</b></div>' +
+        '<span class="lbl" style="color:' + tone + '">' + label + '</span>' +
+        '<button class="btn ' + (applied ? 'btn-done' : 'btn-green') + '" data-act="apply" data-id="' + esc(j.id) + '"' + (applied ? ' disabled' : '') + '>' +
+          (applied ? 'تم إرسال الطلب' : 'قدّم الآن') + '</button>' +
+      '</div>' +
+    '</article>';
+  }).join('');
+}
+async function applyTo(id) {
+  var j = state.jobs.filter(function (x) { return String(x.id) === String(id); })[0];
+  if (!j) return;
+  if (!j.real) return toast('هذه وظيفة تجريبية للعرض فقط');
+  if (!state.user) return openDlg(authHtml('login', 'سجّل الدخول أولاً للتقديم على الوظيفة'));
+  if (!state.profile || state.profile.role !== 'seeker') return toast('التقديم متاح لحسابات الباحثين عن عمل فقط');
+  var r = await sb.from('applications').insert({ job_id: j.id, seeker_id: state.user.id });
+  if (r.error && r.error.code !== '23505') return toast('تعذّر إرسال الطلب: ' + r.error.message);
+  if (state.applied.indexOf(j.id) < 0) state.applied.push(j.id);
+  renderJobs(); toast(r.error ? 'سبق وقدّمت على هذه الوظيفة' : 'تم إرسال طلبك بنجاح');
+}
+
+function renderSkills() {
+  $('skills').innerHTML = ALL_SKILLS.map(function (k) {
+    var on = state.skills.indexOf(k) >= 0;
+    return '<button class="skill-btn' + (on ? ' on' : '') + '" aria-pressed="' + on + '" data-act="skill" data-k="' + k + '">' + k + '</button>';
+  }).join('');
+}
+var saveTimer;
+function persistSkills() {
+  if (!state.user || !state.profile || state.profile.role !== 'seeker') return;
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(function () { sb.from('profiles').update({ skills: state.skills }).eq('id', state.user.id).then(function () {}); }, 700);
+}
+function renderRoles() {
+  $('tabs').innerHTML = Object.keys(ROLES).map(function (key) {
+    return '<button class="tab" role="tab" aria-selected="' + (state.role === key) + '" data-act="role" data-k="' + key + '">' + ROLES[key].label + '</button>';
+  }).join('');
+  var r = ROLES[state.role];
+  $('rTitle').textContent = r.title; $('rDesc').textContent = r.desc; $('rCta').textContent = r.cta;
+  $('rSteps').innerHTML = r.steps.map(function (t, i) { return '<li><span class="n">' + (i + 1) + '</span><span>' + t + '</span></li>'; }).join('');
+}
+function resetFilters() {
+  $('q').value = ''; $('city').value = 'all'; $('qual').value = 'all'; $('exp').value = 'all'; $('salary').value = '0';
+  renderJobs();
+}
+
+/* ===== الأحداث ===== */
+document.addEventListener('click', function (e) {
+  var el = e.target.closest('[data-act]');
+  if (!el) return;
+  var act = el.getAttribute('data-act'), k = el.getAttribute('data-k');
+  if (act === 'skill') {
+    var i = state.skills.indexOf(k);
+    if (i >= 0) state.skills.splice(i, 1); else state.skills.push(k);
+    renderSkills(); renderJobs(); persistSkills();
+  } else if (act === 'dskill') {
+    var on = !el.classList.contains('on'); el.classList.toggle('on', on); el.setAttribute('aria-pressed', on);
+  } else if (act === 'apply') { applyTo(el.getAttribute('data-id'));
+  } else if (act === 'role') { state.role = k; renderRoles();
+  } else if (act === 'reset') { resetFilters();
+  } else if (act === 'close') { closeDlg();
+  } else if (act === 'login') { openDlg(authHtml('login'));
+  } else if (act === 'signup') { openDlg(authHtml('signup', '', 'seeker'));
+  } else if (act === 'switch') { openDlg(authHtml(k, '', 'seeker'));
+  } else if (act === 'logout') { sb.auth.signOut().then(function () { toast('تم تسجيل الخروج'); });
+  } else if (act === 'profile') { openProfile();
+  } else if (act === 'newjob') { openNewJob();
+  } else if (act === 'apps') { openApps();
+  } else if (act === 'cta') {
+    if (state.role === 'admin') return toast('لوحة الإدارة قيد التجهيز');
+    if (!state.user) return openDlg(authHtml('signup', '', state.role));
+    if (state.role === 'employer' && state.profile && state.profile.role === 'employer') openNewJob(); else openProfile();
+  }
+});
+['q', 'city', 'qual', 'exp', 'salary'].forEach(function (id) {
+  $(id).addEventListener(id === 'q' ? 'input' : 'change', renderJobs);
+});
+$('reset').addEventListener('click', resetFilters);
+
+/* ===== البداية ===== */
+$('city').innerHTML = '<option value="all">كل المدن</option>' + CITIES.map(function (c) { return '<option>' + c + '</option>'; }).join('');
+$('rCta').setAttribute('data-act', 'cta');
+$('matchSteps').innerHTML = MATCH_STEPS.map(function (s, i) {
+  return '<div class="step"><span class="num">' + (i + 1) + '</span><strong style="font-size:17px">' + s[0] + '</strong><span class="t">' + s[1] + '</span></div>';
+}).join('');
+renderAuthBar(); renderSkills(); renderRoles(); renderJobs();
+loadJobs().then(renderJobs);
+if (sb) {
+  sb.auth.onAuthStateChange(function (ev, session) {
+    if (ev === 'TOKEN_REFRESHED') return;
+    var uid = session && session.user && session.user.id;
+    if (ev === 'SIGNED_IN' && uid && state.user && state.user.id === uid && state.profile) return;
+    setTimeout(function () { handleSession(session).then(function () { return loadJobs(); }).then(renderJobs); }, 0);
+  });
+}
+</script>
+</body>
+</html>
